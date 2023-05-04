@@ -1,4 +1,4 @@
-Seguros<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +7,8 @@ Seguros<!DOCTYPE html>
     <title>Seguros - Bikcraft</title>
     <meta name="description" content="Seguros." />
 
-    <link rel="preload" href="./css/style.css" as="style" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preload" href="./css/style.min.css" as="style" />
+    <link rel="stylesheet" href="./css/style.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,7 +41,7 @@ Seguros<!DOCTYPE html>
       </div>
 
       <div class="seguros container">
-        <div class="seguros-item">
+        <div class="seguros-item FadeInLeft" data-anime="200">
           <h3 class="font-1-xl cor-6">PRATA</h3>
           <span class="font-1-xl cor-0"
             >R$199 <span class="font-1-xs cor-6">mensal</span></span
@@ -52,9 +52,13 @@ Seguros<!DOCTYPE html>
             <li>Suporte 08h às 18h</li>
             <li>Cobertura estadual</li>
           </ul>
-          <a class="botao secundario" href="./orcamento.html">Inscreva-se</a>
+          <a
+            class="botao secundario"
+            href="./orcamento.html?tipo=seguro&produto=prata"
+            >Inscreva-se</a
+          >
         </div>
-        <div class="seguros-item">
+        <div class="seguros-item FadeInRight" data-anime="800">
           <h3 class="font-1-xl cor-p1">OURO</h3>
           <span class="font-1-xl cor-0"
             >R$299 <span class="font-1-xs cor-6">mensal</span></span
@@ -67,7 +71,9 @@ Seguros<!DOCTYPE html>
             <li>Desconto em parceiros</li>
             <li>Acesso ao clube bikcraft</li>
           </ul>
-          <a class="botao" href="./orcamento.html">Inscreva-se</a>
+          <a class="botao" href="./orcamento.html?tipo=seguro&produto=ouro"
+            >Inscreva-se</a
+          >
         </div>
       </div>
     </main>
@@ -147,43 +153,91 @@ Seguros<!DOCTYPE html>
       </h2>
       <dl>
         <div>
-          <dt class="font-1-m-b">Qual forma de pagamento vocês aceitam?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="true"
+              aria-controls="pergunta-1"
+            >
+              Qual forma de pagamento vocês aceitam?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9 ativa" id="pergunta-1">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
         </div>
         <div>
-          <dt class="font-1-m-b">Como posso entrar em contato?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="false"
+              aria-controls="pergunta-2"
+            >
+              Como posso entrar em contato?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9" id="pergunta-2">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
         </div>
         <div>
-          <dt class="font-1-m-b">Vocês possuem algum desconto?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="false"
+              aria-controls="pergunta-3"
+            >
+              Vocês possuem algum desconto?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9" id="pergunta-3">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
         </div>
         <div>
-          <dt class="font-1-m-b">Qual a garantia que possuo?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="false"
+              aria-controls="pergunta-4"
+            >
+              Qual a garantia que possuo?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9" id="pergunta-4">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
         </div>
         <div>
-          <dt class="font-1-m-b">Posso parcelar no boleto?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="false"
+              aria-controls="pergunta-5"
+            >
+              Posso parcelar no boleto?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9" id="pergunta-5">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
         </div>
         <div>
-          <dt class="font-1-m-b">Quantas trocas posso fazer por ano?</dt>
-          <dd class="font-2-s cor-9">
+          <dt>
+            <button
+              class="font-1-m-b"
+              aria-expanded="false"
+              aria-controls="pergunta-6"
+            >
+              Quantas trocas posso fazer por ano?
+            </button>
+          </dt>
+          <dd class="font-2-s cor-9" id="pergunta-6">
             Aceitamos pagamentos parcelados em qualquer cartão de crédito e à
             vista através de Dinheiro, Pix ou Débito
           </dd>
@@ -229,5 +283,7 @@ Seguros<!DOCTYPE html>
         </p>
       </div>
     </footer>
+    <script src="./js/simple-anime.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
